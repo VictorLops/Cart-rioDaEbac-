@@ -1,20 +1,20 @@
-#include <stdio.h> //bibioteca de comunicação com o usuário
-#include <stdlib.h> //biblioteca de alocação de espaço de memoria
-#include <locale.h> //biblioteca de alocações de texto por região
+#include <stdio.h> //bibioteca de comunicaÃ§Ã£o com o usuÃ¡rio
+#include <stdlib.h> //biblioteca de alocaÃ§Ã£o de espaÃ§o de memoria
+#include <locale.h> //biblioteca de alocaÃ§Ãµes de texto por regiÃ£o
 
 int main() 
 {
-	int registro() //função responsavel por cadastrar os usúarios no sistema
+	int registro() //funÃ§Ã£o responsavel por cadastrar os usÃºarios no sistema
 	{
-		//inicio da criação de variaveis/strings
+		//inicio da criaÃ§Ã£o de variaveis/strings
 		char arquivo[40];
 		char cpf[40];
 		char nome[40];
 		char sobrenome[40];
 		char cargo[40];
-		//final da criação variaveis/strings
+		//final da criaÃ§Ã£o variaveis/strings
 		
-		printf("Digite o CPF a ser cadastrado: "); //coletando informações do usuario
+		printf("Digite o CPF a ser cadastrado: "); //coletando informaÃ§Ãµes do usuario
 		scanf("%s",cpf); //%s refere-se a string
 		
 		strcpy(arquivo, cpf); //responsavel por copiar os valores das string
@@ -28,7 +28,7 @@ int main()
 		fprintf(file, ","); //salvando o valor na variavel
 		fclose(file); //fecha o arquivo
 		
-		printf("Digite o nome a ser cadastrado: "); //coletando informações do usuario
+		printf("Digite o nome a ser cadastrado: "); //coletando informaÃ§Ãµes do usuario
 		scanf("%s",nome); //%s refere-se a string
 		
 		file = fopen(arquivo, "a"); //Abrindo o arquivo
@@ -39,7 +39,7 @@ int main()
 		fprintf(file, ","); //salvando o valor na variavel
 		fclose(file); //fechando o arquivo
 		
-		printf("Digite o sobrenome a ser cadrastrado: "); //coletando informações do usario
+		printf("Digite o sobrenome a ser cadrastrado: "); //coletando informaÃ§Ãµes do usario
 		scanf("%s",sobrenome); //%s refere-se a string
 		
 		file = fopen(arquivo, "a");
@@ -50,7 +50,7 @@ int main()
 		fprintf(file, ","); //salvando o valor na variavel
 		fclose(file); //fechando o arquivo
 		
-		printf("Digite o cargo a ser registrado: "); //coletando informações do usario
+		printf("Digite o cargo a ser registrado: "); //coletando informaÃ§Ãµes do usario
 		scanf("%s",cargo); //%s refere-se a string
 		
 		file = fopen(arquivo, "a"); //Abrindo o arquivo
@@ -72,19 +72,20 @@ int main()
   	
 	FILE *file;
 	file = fopen(cpf,"r");
+	fclose(file); //fechado o arquivo
   	
 	if(file == NULL)
 {
-	printf("Não foi possivel abrir o arquivo, não localizado!.\n");
+	printf("NÃ£o foi possivel abrir o arquivo, nÃ£o localizado!.\n");
 }
 	
 	while(fgets(conteudo, 100, file) != NULL)
 {
-	printf("\n essas são as informações: ");
+	printf("\n essas sÃ£o as informaÃ§Ãµes: ");
 	printf("%s", conteudo);
 	printf("\n\n");
 }
-  	system ("pause"); //pausa o sistema para coleta de informações
+  	system ("pause"); //pausa o sistema para coleta de informaÃ§Ãµes
 	
 
 		
@@ -93,7 +94,7 @@ int main()
 	{	
 		char cpf [40];
 		
-		printf("Digite o CPG do usúario a ser deletado: ");
+		printf("Digite o CPG do usÃºario a ser deletado: ");
 		scanf("%s", cpf);
 		
 		remove(cpf);
@@ -104,7 +105,7 @@ int main()
 		
 		if(file == NULL)
 		{
-			printf("O usuário não se encontra no sistema!. \n");
+			printf("O usuÃ¡rio nÃ£o se encontra no sistema!. \n");
 			system("pause");
 		}	
 		
@@ -122,17 +123,17 @@ int main()
 	
 		setlocale(LC_ALL, "Portuguese"); //definindo a linguagem
 	
-		printf("### Cartório da EBAC ### \n\n"); //inicio do menu
-		printf("Escolha a opção que deseja no menu:\n\n");
+		printf("### CartÃ³rio da EBAC ### \n\n"); //inicio do menu
+		printf("Escolha a opÃ§Ã£o que deseja no menu:\n\n");
 		printf("\t1 - Registrar nomes\n");
 		printf("\t2 - Consultar nomes\n");
 		printf("\t3 - Deletar nomes\n\n"); //fim do menu
 		printf("\t4 - Sair do sistema \n\n)");
-		printf("opção:");//Fim do menu
+		printf("opÃ§Ã£o:");//Fim do menu
 		
 	
 	
-		scanf("%d", &opcao); //armazenamento a escolha da usuário
+		scanf("%d", &opcao); //armazenamento a escolha da usuÃ¡rio
 	
 		system("cls");
 		
@@ -153,7 +154,7 @@ int main()
 			break;
 			
 			default:
-				printf("Essa opção não está disponivel\n");
+				printf("Essa opÃ§Ã£o nÃ£o estÃ¡ disponivel\n");
 				system("pause");
 				break;
 			
